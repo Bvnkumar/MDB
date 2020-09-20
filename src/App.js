@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import Router from "./routes/routes";
+import PropTypes from 'prop-types';
 
 class App extends React.Component {
   constructor() {
@@ -23,7 +24,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <nav className="navbar navbar-dark bg-navbar d-flex ">
-          <a class="navbar-brand" href="/">
+          <a className="navbar-brand" href="/">
             MDB
           </a>
           <span className="navbar-toggler-icon" onClick={this.openNav}></span>
@@ -32,6 +33,14 @@ class App extends React.Component {
       </div>
     );
   }
+}
+
+App.propTypes={
+  id:PropTypes.number.isRequired
+}
+
+App.defaultProps={
+  id:1
 }
 
 export default App;
